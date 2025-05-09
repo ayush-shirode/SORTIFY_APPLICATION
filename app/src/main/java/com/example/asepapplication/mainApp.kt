@@ -39,15 +39,15 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.RectangleShape
 
 @Composable
-fun mainApp() {
+fun mainApp(navigateToQR: () -> Unit) {
     Column {
-        Column(modifier = Modifier.fillMaxWidth().background(Color(0xFFBDB96A)).padding(16.dp),
+        Column(modifier = Modifier.fillMaxWidth().background(Color(0xFF63FFB6)).padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally) {
-            Text(text = "SORTIFY", fontFamily = FontFamily.Serif, fontWeight = FontWeight.ExtraBold, fontSize = 45.sp, color = Color(0xFFCF6DFC))
+            Text(text = "SORTIFY", fontFamily = FontFamily.Serif, fontWeight = FontWeight.ExtraBold, fontSize = 45.sp, color = Color(0xFF723480))
             Text(text = "Intelligent Dry Waste Sorting Powered by AI and IOT", fontSize = 12.sp, fontFamily = FontFamily.Serif)
         }
         Column(modifier = Modifier.fillMaxSize().padding(16.dp).verticalScroll(rememberScrollState())) {
-            Box(modifier = Modifier.background(Color(0xFFC1BFFF)).padding(8.dp).border(width = 2.dp, color = Color.Black, shape = RectangleShape)
+            Box(modifier = Modifier.background(Color(0xFFFFB5AB)).padding(8.dp).border(width = 2.dp, color = Color.Black, shape = RectangleShape)
                 .clickable {}) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Image(
@@ -58,7 +58,8 @@ fun mainApp() {
                     Text(text = "QUIZ: Let's Test your Knowledge", modifier = Modifier.padding(16.dp))
                 }
             }
-            Box(modifier = Modifier.background(Color(0xFFC1BFFF)).padding(8.dp).border(width = 2.dp, color = Color.Black, shape = RectangleShape)
+            Spacer(modifier = Modifier.fillMaxWidth().padding(12.dp))
+            Box(modifier = Modifier.background(Color(0xFFFFB5AB)).padding(8.dp).border(width = 2.dp, color = Color.Black, shape = RectangleShape)
                 .clickable {}) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Image(
@@ -69,7 +70,8 @@ fun mainApp() {
                     Text(text = "Challenges and Mission", modifier = Modifier.padding(16.dp))
                 }
             }
-            Box(modifier = Modifier.background(Color(0xFFC1BFFF)).padding(8.dp).border(width = 2.dp, color = Color.Black, shape = RectangleShape)
+            Spacer(modifier = Modifier.fillMaxWidth().padding(12.dp))
+            Box(modifier = Modifier.background(Color(0xFFFFB5AB)).padding(8.dp).border(width = 2.dp, color = Color.Black, shape = RectangleShape)
                 .clickable {}) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Image(

@@ -38,6 +38,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,58 +48,9 @@ class MainActivity : ComponentActivity() {
             ASEPApplicationTheme {
                 Scaffold(
                     modifier = Modifier.fillMaxSize().padding(WindowInsets.systemBars.asPaddingValues()),
-                    containerColor = Color(0xFFFDFBD4)
+                    containerColor = Color(0xFFFFFFFF)
                 ) { innerPadding ->
-
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                    ) {
-                        mainApp()
-                        Column(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .align(Alignment.BottomCenter)
-                                .background(Color(0xFFBDB96A))
-                        ) {
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.SpaceBetween,
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                IconButton(onClick = {}) {
-                                    Icon(
-                                        imageVector = Icons.Default.Person,
-                                        contentDescription = "Profile"
-                                    )
-                                }
-                                IconButton(onClick = {}) {
-                                    Icon(
-                                        imageVector = Icons.Default.LocationOn,
-                                        contentDescription = "Map"
-                                    )
-                                    }
-                                IconButton(onClick = {}) {
-                                    Image(
-                                        painter = painterResource(id = R.drawable.sortifylogo),
-                                        contentDescription = "Sortify",
-                                        modifier = Modifier.size(96.dp)
-                                    )}
-                                IconButton(onClick = {}) {
-                                    Icon(
-                                        imageVector = Icons.Default.Done,
-                                        contentDescription = "Contribution"
-                                    )
-                                }
-                                IconButton(onClick = {}) {
-                                    Icon(
-                                        imageVector = Icons.Default.Info,
-                                        contentDescription = "Guide"
-                                    )
-                                }
-                            }
-                        }
-                    }
+                    ASEPapp(navController = rememberNavController())
                 }
             }
         }
